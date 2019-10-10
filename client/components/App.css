@@ -1,0 +1,6 @@
+body{
+    background-color: aliceblue;
+  }
+  
+
+  @import '~antd/dist/antd.css';
