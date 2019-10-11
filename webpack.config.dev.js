@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 export default {
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     entry: [
         'react-hot-loader/patch',
         'webpack/hot/only-dev-server',
@@ -21,7 +21,7 @@ export default {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 include: path.join(__dirname, 'client'),
                 loaders: ['react-hot-loader/webpack','babel-loader'],
                 exclude: /node_modules/
@@ -29,6 +29,6 @@ export default {
         ]
     },
     resolve: {
-        extensions: ['*','.js']
+        extensions: ['','.js']
     }
 }

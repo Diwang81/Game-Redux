@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Navbar from '../Navbar/Navbar';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <h1>Hello from React</h1>
+      <div className= "countiner">
+        <Navbar/>
+      </div>
     );
   }
 }
