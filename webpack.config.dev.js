@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 export default {
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     entry: [
         'react-hot-loader/patch',
         'webpack/hot/only-dev-server',
@@ -10,9 +10,9 @@ export default {
         path.join(__dirname, '/client/index.js'),
     ],
     output: {
+        path: path.resolve(__dirname, '/dist'),
         filename: 'bundle.js',
         publicPath: '/',
-        path: path.resolve(__dirname, '/dist'),
     },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
@@ -21,7 +21,7 @@ export default {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 include: path.join(__dirname, 'client'),
                 loaders: ['react-hot-loader/webpack','babel-loader'],
                 exclude: /node_modules/
@@ -29,6 +29,6 @@ export default {
         ]
     },
     resolve: {
-        extensions: ['','.js']
+        extensions: ['.js']
     }
 }

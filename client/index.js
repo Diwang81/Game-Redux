@@ -1,7 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import routes from './routes';
+import App from './components/App';
+import Navbar from './Navbar/Navbar';
 
-render(<Router routes={routes} />, document.getElementById('app'));
+render(
+    <Router>
+      <App>
+        <Switch>
+          <Route exact path="/" component={Navbar} />
+        </Switch>
+      </App>
+    </Router>
+  , document.getElementById('app'));
